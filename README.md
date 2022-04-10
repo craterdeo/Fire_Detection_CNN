@@ -59,6 +59,69 @@ After doing this, the open directory in the vs code window will show an empty di
 
 ![image](https://user-images.githubusercontent.com/81915404/162586381-cc4d9315-fe44-45c4-85f7-2081e2e904a7.png)
 
-## Downloading the Required Files:
+Next, we need to install the required dependencies (python libraries) to be able to implement our code. 
+In this code, we are making use of Tensorflow Library . To install this on VS code, go to the terminal and enter the following command:
+    
+    pip install tensorflow 
 
+## Downloading the Required Files:
+The files block of the repository contains three files `fire_detection.ipynb` , `fire_detection.txt` and `fire_detection.py`.
+
+To implement the algorithm, only the jupyter notebook is required i.e. `fire_detection.ipynb`. The other two can be used as references . The text file shows the complete training process steps and the python file contains the complete code as a single file though running it will not give the same output as vscode cannot process images in its terminal.
+
+To set the directory up for implementation, download `fire_detection.ipynb` file in the `Fire_Detection` diretory that was initially set up. Next, we need to set up the **Training , Testing** and **Validation** datasets. 
+
+Splitting the dataset into these three sets is a very important task as it decides whether the model will be able to learn the pattern perfectly and be able to identify them or not. The dataset can be split in any way , some of which are shown below. Choosing the right validation dataset is necessary to prevent overfitting as well as underfitting of the model. To understand more about splitting the dataset, you can refer to [this](https://www.v7labs.com/blog/train-validation-test-set) website.
+
+![image](https://user-images.githubusercontent.com/81915404/162608173-322a266b-d620-4a97-baf8-756081cf6ab3.png)
+
+To split the dataset, create afolder in the `Fire_Detection` directry and name it `Dataset_Fire` or any other name as per your choice. Create three folders in this folder `Training` , `Testing` and `Validation`. In the training folder, add 70 - 75 % of your dataset images and add 10 - 15 % of them to the validation dataset. Try to put a high amount of varied images in the validation dataset for better fitting. Add the rest of the images in the testing dataset. 
+
+In the `Trainng` and `Vaidation` folders, seperate the fire and non fire images into `fire` and `non_fire` folders while in the `Testing` folder, let there be all images at the same place.
+
+This allows the model to train to be able to classify the images as fire or non fire.
+
+After finishing this, the directory will look like this:
+
+![image](https://user-images.githubusercontent.com/81915404/162608510-8bfab761-0b0c-4339-8bec-8e388901a241.png)
+
+Now lets see how to implement the code in vs code.
+
+## 4)Implementing the Convolutional Neural Network (CNN) Algorithm
+
+To implement the code, click on the `fire_detection.ipynb` file in the open editor in vs code shown above. Then, start doing `shift + enter` on all the blocks indivisually or press run all button on top to execute the program.
+
+When the block with model.fit() command is executed, the training will start and will continue for a while depending on size of the dataset as well as the number of epochs it is being trained for. The output/training steps will look like wats shown in the `fire_detection.txt` file which was output for 50 epochs.
+
+![image](https://user-images.githubusercontent.com/81915404/162609237-298402ce-f019-4806-b0c5-9041893120a8.png)
+
+Finally, when the last code block is executed, the model will take the testing dataset images as input and for each of them, print if the image has fire or not.
+
+The output obtained from the above code was :
+
+![image](https://user-images.githubusercontent.com/81915404/162609311-9481c66d-a870-4c63-9d0f-92ba7430c9c7.png)
+
+![image](https://user-images.githubusercontent.com/81915404/162609318-ceaa9cc9-e671-469a-aaa6-d80e6a319428.png)
+
+As we can see, the model is able to correctly detect if the image contains fire or not.
+
+## 5) Analysing the Output 
+
+The journey of image detection doesnt end with correct outputs, The output now has to be analysed to see if the model is able to get the correct output for different scenarios and conditions in the images. 
+
+Our output on the testing dataset looks as follows:
+
+![image](https://user-images.githubusercontent.com/81915404/162609564-da1455b7-f2a5-4094-8fb9-5d7e03f66a6e.png) ![image](https://user-images.githubusercontent.com/81915404/162609570-ac401dc9-386a-4190-957a-a72a370d5da9.png) ![image](https://user-images.githubusercontent.com/81915404/162609604-7d42fcb4-4b08-4f94-8a4d-c27ffc0c7ecf.png)
+
+![image](https://user-images.githubusercontent.com/81915404/162609634-15b394c4-2aaf-488e-9d2c-19c7448502d9.png) ![image](https://user-images.githubusercontent.com/81915404/162609645-11cb0516-47aa-48b0-8d59-cba2ee01bb2d.png)
+
+### The Exception:
+As stated above, the model can only predict based on whatever has been fed as data to it. In CNN algorithm, the model finds specific pstterns n the images and filters then through multiple neural netwrok layers to come up with the best aggregate of pattern that can detect the image. 
+
+For our dataset, the model is able to detect most of the images as fire or non fire correctly. However, in some case as shown below, where the condition satisfies the pattern found by the model for fire but the existnce of fire is not clearly seen, we cannot say for sure if fire is there in the image. However, based on the patterns the model has learned through training, it detects the image to have fire. 
+
+![image](https://user-images.githubusercontent.com/81915404/162609819-7fe2fc9d-b1ee-4971-ace6-8c176a002ad9.png)
+
+
+Thus as stated earlier, detection depends on the way the dataset was split into the three sets. Checking for better outputs by trying multiple different split percentages is also a way to see which one fits best . However, since all possible combinations cannot be tried with all different images, we can do this for a limited number of times and find the best fit we are able to get.
 
