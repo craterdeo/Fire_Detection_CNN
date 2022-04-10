@@ -60,9 +60,13 @@ After doing this, the open directory in the vs code window will show an empty di
 ![image](https://user-images.githubusercontent.com/81915404/162586381-cc4d9315-fe44-45c4-85f7-2081e2e904a7.png)
 
 Next, we need to install the required dependencies (python libraries) to be able to implement our code. 
-In this code, we are making use of Tensorflow Library . To install this on VS code, go to the terminal and enter the following command:
+In this code, we are making use of Tensorflow Library . We will also use numpy to create arrays of images and os to refer our directory thorugh code.
+
+To install these on VS code, go to the terminal and enter the following commands:
     
     pip install tensorflow 
+    pip install numpy
+    pip install os
 
 ## Downloading the Required Files:
 The files block of the repository contains three files `fire_detection.ipynb` , `fire_detection.txt` and `fire_detection.py`.
