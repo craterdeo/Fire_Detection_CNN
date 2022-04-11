@@ -73,7 +73,7 @@ The files block of the repository contains three files `fire_detection.ipynb` , 
 
 To implement the algorithm, only the jupyter notebook is required i.e. `fire_detection.ipynb`. The other two can be used as references . The text file shows the complete training process steps and the python file contains the complete code as a single file though running it will not give the same output as vscode cannot process images in its terminal.
 
-To set the directory up for implementation, download `fire_detection.ipynb` file in the `Fire_Detection` diretory that was initially set up. Next, we need to set up the **Training , Testing** and **Validation** datasets. 
+To set the directory up for implementation, download `fire_detection.ipynb` file in the `Fire_Detection` directory that was initially set up. Next, we need to set up the **Training , Testing** and **Validation** datasets. 
 
 Splitting the dataset into these three sets is a very important task as it decides whether the model will be able to learn the pattern perfectly and be able to identify them or not. The dataset can be split in any way , some of which are shown below. Choosing the right validation dataset is necessary to prevent overfitting as well as underfitting of the model. To understand more about splitting the dataset, you can refer to [this](https://www.v7labs.com/blog/train-validation-test-set) website.
 
