@@ -119,6 +119,22 @@ Our output on the testing dataset looks as follows:
 
 ![image](https://user-images.githubusercontent.com/81915404/162609634-15b394c4-2aaf-488e-9d2c-19c7448502d9.png) ![image](https://user-images.githubusercontent.com/81915404/162609645-11cb0516-47aa-48b0-8d59-cba2ee01bb2d.png)
 
+### Accuracy and Loss:
+Accuracy and loss values allow us to see how much was our model able to learn and implement given the current number of epochs, dataset and dataset splitting.
+For our current run, the accuracy and loss can be seen as follows.
+This can be seen by running a simple python cammand -
+  
+    import matplotlib.pyplot as plt
+    plt.plot(accs)
+
+Here, `accs` is the accuracy list containing accuracy values for each training epoch and same can be said for a `loss` list. These can be obtained as follows-
+
+     accs = history.history['acc']
+     loss = history.history['loss']
+
+![image](https://user-images.githubusercontent.com/81915404/163809313-049996d7-adc9-4465-95ff-5de51cf4af67.png)
+
+The blue line shows accuracy and the yellow line shows loss .
 ### The Exception:
 As stated above, the model can only predict based on whatever has been fed as data to it. In CNN algorithm, the model finds specific pstterns n the images and filters then through multiple neural netwrok layers to come up with the best aggregate of pattern that can detect the image. 
 
